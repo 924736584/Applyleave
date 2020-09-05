@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Yfun.interview.mapper.ApprovalProgressMapper">
+  <resultMap id="BaseResultMap" type="com.Yfun.interview.dao.ApprovalProgress">
+    <!--@mbg.generated-->
+    <!--@Table approval_progress-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="progress" jdbcType="INTEGER" property="progress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+     `name`, nickname, department, progress
+  </sql>
+  <insert id="insertUserProgress" parameterType="com.Yfun.interview.dao.ApprovalProgress">
+        insert  into approval_progress(<include refid="Base_Column_List"/>) values (#{name},#{nickname},#{department},#{progress})
+</insert>
+</mapper>

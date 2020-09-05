@@ -1,0 +1,141 @@
+<html lang="ch"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        员工请假表列表
+    </title>
+    <style type="text/css">
+        TABLE { FONT-SIZE: 12px; COLOR: #000000 } .TitleLine { padding-left: 12px; FONT-WEIGHT:
+                bold; FONT-SIZE: 12px; COLOR: #ffffff; background-color: #578b43; height:
+                28px; padding-top:6px; } .TitleLine2 { padding-left: 12px; FONT-WEIGHT:
+                bold; FONT-SIZE: 12px; COLOR: #ffffff; background-color: #578b43; height:
+                20px; padding-top:4px; } .Titleline2_bg{ background-color:#f3f3ec; border-bottom:2px
+        solid #578b43; padding:10px; } .Titleline2td{ height:18px; } .vt9_title
+                                                                     { font-weight: bold; font-size: 12px; color: #2F2F2F; background-color:
+                    #CCCCCC; height: 20px; line-height: 24px; } .T9_blackB { FONT-WEIGHT: bold;
+                                                                    FONT-SIZE: 12px; COLOR: #008000; LINE-height: 25px; TEXT-DECORATION: none;
+                                                                    TEXT-align: left; background-color:#cecece; padding-left:5px; }
+        .table_border td{border-top:1px #888 solid;border-right:1px #888 solid;padding-left:5px;}
+        .table_border{border-bottom:1px #888 solid;border-left:1px #888 solid;}
+    </style>
+</head>
+
+<body><center>
+
+    <table cellSpacing="2" cellPadding="0" width="740" border="0" id="table7">
+        <tr>
+            <td class="TitleLine" colSpan="12" >
+                员工请假表
+            </td>
+        </tr>
+        <tr>
+            <!--<td bgColor="#ffffff" colSpan="12" height="2">
+            </td>-->
+        </tr>
+        <tr class="vt9_title">
+            <td noWrap width="100%" colSpan="12" >
+                &nbsp; 员工请假表申请
+            </td>
+        </tr>
+        <tr>
+            <td colSpan="12" height="5">
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" width="10%">姓名：</td>
+			<td colspan="4">	<label  style="font-size: 16px; font-weight: bold;"> %name%</label></td>
+            <td colspan="2" width="10%">账号：</td>
+            <td colspan="4" width="40%"><label  style="font-size: 16px; font-weight: bold;"> %nickname%</label></td>
+        </tr>
+        <tr>
+            <td>部门:</td>
+            <td colspan="3"><label style="font-size: 16px;font-weight:bold ;"  >%department%</label></td>
+          </tr>
+        <tr>
+            <th align="left" colspan="4">请假类别</th>
+        </tr>
+        <tr>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox"  value="0" />
+            </label>事假</td>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox"  value="1" />
+            </label>病假</td>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox"  value="2" />
+            </label>产假</td>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox"  value="3" />
+            </label>丧假</td>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox" value="4" />
+            </label>年休假</td>
+            <td colspan="2"><label>
+                <input name="type" type="checkbox"  value="5"/>
+            </label>其他</td>
+        </tr>
+        <tr>
+            <th colspan="12" align="left">请假事由</td>
+        </tr>
+        <tr></tr>
+        <tr>
+        	<td colspan="12">
+        		<textarea style="width: 60%;height: 80px;">%leave_reason%</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th align="left">请假时间</th>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="5">
+                <label>
+                <input name="year" type="text" style="width: 40px" value="%src_year%">
+            </label>&nbsp;年&nbsp;
+                <label>
+                    <input name="month" type="text" style="width: 40px" value="%src_month%">
+                </label>&nbsp;月&nbsp;
+                <label>
+                    <input name="day" type="text" style="width: 40px" value="%src_day%"/>
+                </label>&nbsp;日&nbsp;
+                <label>
+                    <input name="hours" type="text" style="width: 40px" value="%src_hours%" />
+                </label>&nbsp;时
+            </td>
+            <td colspan="5">
+                <label>
+                    <input name="year" type="text" style="width: 40px" value="%det_year%" />
+                </label>&nbsp;年&nbsp;
+                <label>
+                    <input name="det_month" type="text" style="width: 40px" value="%det_month%" />
+                </label>&nbsp;月&nbsp;
+                <label>
+                    <input name="det_day" type="text" style="width: 40px" value="%det_day%" />
+                </label>&nbsp;日&nbsp;
+                <label>
+                    <input name="det_hours" type="text" style="width: 40px" value="%det_hours%" />
+                </label>&nbsp;时
+            </td>
+            <td colspan="2">
+                <label>
+                    <input name="day_t" type="text" style="width: 30px" value="%det_to_day%" />
+                </label>&nbsp;天&nbsp;
+                <label>
+                    <input name="to_hours" type="text" style="width: 30px" value="%det_to_hours%" />
+                </label>&nbsp;时&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <th align="left">备注</th>
+        </tr>
+        <tr>
+            <td colspan="12"><textarea style="height: 80px;width: 60%;"></textarea></td>
+        </tr>
+    </table>
+</center>
+</body>
+
+</html>
+
+

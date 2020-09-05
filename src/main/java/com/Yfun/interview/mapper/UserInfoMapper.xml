@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Yfun.interview.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.Yfun.interview.dao.UserInfo">
+    <!--@mbg.generated-->
+    <!--@Table user_info-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="passwd" jdbcType="VARCHAR" property="passwd" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="idcard_number" jdbcType="VARCHAR" property="idcardNumber" />
+    <result column="root_level" jdbcType="INTEGER" property="rootLevel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, nick_name, passwd, department, phone_number, email, idcard_number, root_level
+  </sql>
+    <sql id="Base_Info_List">
+        id,name,nick_name,phone_number,email
+    </sql>
+  <sql id="Base_Column_List_Noid">
+    <!--@mbg.generated-->
+    `name`, nick_name, passwd, department, phone_number, email, idcard_number, root_level
+  </sql>
+  <sql id="Base_Data_List">
+    #{name},#{nickName},#{passwd},#{department},#{phoneNumber},#{email},#{idcardNumber},#{rootLevel}
+  </sql>
+  <insert id="insertUserInfo" parameterType="com.Yfun.interview.dao.UserInfo"  keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+    insert  into user_info(<include refid="Base_Column_List_Noid"/>) values(<include refid="Base_Data_List"/>)
+  </insert>
+    <select id="selectUserInfoByEmail" resultMap="BaseResultMap">
+        select <include refid="Base_Info_List"/> from user_info
+        <where>
+            email=#{email}
+        </where>
+    </select>
+    <select id="selectUserInfoByPhoneNumber" resultMap="BaseResultMap">
+        select <include refid="Base_Info_List"/> from user_info
+        <where>
+            phone_number = #{phoneNumber}
+        </where>
+    </select>
+    <select id="selectUserInfoByIdcardNumber" resultMap="BaseResultMap">
+     select <include refid="Base_Info_List"/> from user_info
+        <where>
+            idcard_number = #{idcardNumber}
+        </where>
+</select>
+    <select id="selectUserInfoLoginCheck" resultMap="BaseResultMap">
+        select <include refid="Base_Info_List"/> from user_info
+        <where>
+            nick_name=#{nickName} and passwd=#{passwd}
+        </where>
+    </select>
+    <select id="selectLeaderInfoByDepartment" resultMap="BaseResultMap">
+    select <include refid="Base_Info_List"/> from user_info
+        <where>
+            department=#{department} and root_level=1
+        </where>
+</select>
+</mapper>

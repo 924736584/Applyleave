@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Yfun.interview.mapper.LeaveTableMapper">
+  <resultMap id="BaseResultMap" type="com.Yfun.interview.dao.LeaveTable">
+    <!--@mbg.generated-->
+    <!--@Table leave_table-->
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="leave_type" jdbcType="VARCHAR" property="leaveType" />
+    <result column="leave_reason" jdbcType="VARCHAR" property="leaveReason" />
+    <result column="leave_date" jdbcType="VARCHAR" property="leaveDate" />
+    <result column="permit_date" jdbcType="VARCHAR" property="permitDate" />
+    <result column="executive_msg" jdbcType="VARCHAR" property="executiveMsg" />
+    <result column="president_msg" jdbcType="VARCHAR" property="presidentMsg" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    Id, `name`, nickname, department, create_date, leave_type, leave_reason, leave_date, 
+    permit_date, executive_msg, president_msg, remarks
+  </sql>
+  <insert id="insert" parameterType="com.Yfun.interview.dao.LeaveTable">
+    <!--@mbg.generated-->
+    insert into leave_table ( `name`, nickname,
+      department, create_date, leave_type, 
+      leave_reason, leave_date, permit_date, 
+      executive_msg, president_msg, remarks
+      )
+    values ( #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR},
+      #{department,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{leaveType,jdbcType=VARCHAR}, 
+      #{leaveReason,jdbcType=VARCHAR}, #{leaveDate,jdbcType=VARCHAR}, #{permitDate,jdbcType=VARCHAR}, 
+      #{executiveMsg,jdbcType=VARCHAR}, #{presidentMsg,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.Yfun.interview.dao.LeaveTable">
+    <!--@mbg.generated-->
+    insert into leave_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        Id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="leaveType != null">
+        leave_type,
+      </if>
+      <if test="leaveReason != null">
+        leave_reason,
+      </if>
+      <if test="leaveDate != null">
+        leave_date,
+      </if>
+      <if test="permitDate != null">
+        permit_date,
+      </if>
+      <if test="executiveMsg != null">
+        executive_msg,
+      </if>
+      <if test="presidentMsg != null">
+        president_msg,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaveType != null">
+        #{leaveType,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveReason != null">
+        #{leaveReason,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveDate != null">
+        #{leaveDate,jdbcType=VARCHAR},
+      </if>
+      <if test="permitDate != null">
+        #{permitDate,jdbcType=VARCHAR},
+      </if>
+      <if test="executiveMsg != null">
+        #{executiveMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="presidentMsg != null">
+        #{presidentMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.Yfun.interview.dao.LeaveTable">
+    <!--@mbg.generated-->
+    update leave_table
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaveType != null">
+        leave_type = #{leaveType,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveReason != null">
+        leave_reason = #{leaveReason,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveDate != null">
+        leave_date = #{leaveDate,jdbcType=VARCHAR},
+      </if>
+      <if test="permitDate != null">
+        permit_date = #{permitDate,jdbcType=VARCHAR},
+      </if>
+      <if test="executiveMsg != null">
+        executive_msg = #{executiveMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="presidentMsg != null">
+        president_msg = #{presidentMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{nickname}
+  </update>
+</mapper>
